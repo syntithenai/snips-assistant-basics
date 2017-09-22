@@ -1,0 +1,25 @@
+  - url: ../snips_skill_spelling
+    package_name: spellingskill
+    class_name: SpellingSkill
+    requires_tts: True
+    intents:
+      - intent: SpellWord
+        action: |
+          {%
+          spell_and_say(intent.wordToSpell)
+          %}
+  - url: ../snips_skill_alarm_clock
+    package_name: alarmclockskill
+    class_name: AlarmClockSkill
+    requires_tts: True
+    intents:
+      - intent: WhatIsTheTime
+        action: "what_is_the_time"
+      - intent: ListAlarms
+        action: "list_alarms"
+      - intent: CancelAllAlarms
+        action: "cancel_all_alarms"
+      - intent: CancelAlarm
+        action: "cancel_alarm"
+      - intent: AddAlarm
+        action: "add_alarm"                        
