@@ -5,17 +5,57 @@ default_location: Bega, au
 tts:
     service: snips
 skills:
-  - url: ../snips_skill_maths
+  - pip: snips_skill_maths
     package_name: arithmeticskill
     class_name: ArithmeticSkill
     requires_tts: True
     intents:
       - intent: BasicMaths
-        action: |
+        action: >
           {%
           skill.solve_and_say(intent.numberA,intent.numberB,intent.mathsOperator)
           %}
-  - url: ../snips_skill_usb_power
+  - pip: snips_skill_spelling
+    package_name: spellingskill
+    class_name: SpellingSkill
+    requires_tts: True
+    intents:
+      - intent: SpellWord
+        action: |
+          {%
+          skill.spell_and_say(intent.wordToSpell)
+          %}
+  - pip: snips_skill_monitorcontrol
+    package_name: monitorcontrolskill
+    class_name: MonitorControlSkill
+    requires_tts: True
+    intents:
+      - intent: MonitorSelectBrightness
+        action: |
+          {%
+          skill.monitor_select_brightness(intent.monitorBrightness)
+          %}
+      - intent: MonitorSelectVolume
+        action: |
+          {%
+          skill.monitor_select_volume(intent.monitorVolume)
+          %}
+      - intent: MonitorOn
+        action: |
+          {%
+          skill.monitor_power_on()
+          %}
+      - intent: MonitorOff
+        action: |
+          {%
+          skill.monitor_power_off()
+          %}
+      - intent: MonitorSelectInput
+        action: |
+          {%
+          skill.monitor_select_input(intent.monitorInputNumber)
+          %}
+  - pip: snips_skill_usb_power
     package_name: usbpowerskill
     class_name: UsbPowerSkill
     requires_tts: True
@@ -23,10 +63,15 @@ skills:
       - intent: UsbPowerOnPort
         action: |
           {%
-          skill.usb_power_on(intent.usbPortIdentifier)
+          skill.usb_power_on_say(intent.usbPortIdentifier,skill.usb_load_devices(skill.usb_get_devices()))
           %}
       - intent: UsbPowerOffPort
         action: |
           {%
-          skill.usb_power_off(intent.usbPortIdentifier)
+          skill.usb_power_off_say(intent.usbPortIdentifier,skill.usb_load_devices(skill.usb_get_devices()))
+          %}
+      - intent: UsbListPorts
+        action: |
+          {%
+          skill.usb_list_devices_say(skill.usb_load_devices(skill.usb_get_devices()))
           %}
