@@ -26,7 +26,13 @@ snipsskills run
 
 Usage
 -----
-Four skills are included
+Four skills are tied to voice commands
+
+- https://github.com/syntithenai/snips_skill_maths
+- https://github.com/syntithenai/snips_skill_spelling
+- https://github.com/syntithenai/snips_skill_monitorcontrol
+- https://github.com/syntithenai/snips_skill_usbpower
+
 
 Maths
 "what is 4 plus 2"
