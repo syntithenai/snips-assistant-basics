@@ -1,1 +1,6 @@
 .snips
+.eggs/
+assistant-test/
+assistant/
+assistantproj_testsuite.zip
+snips_assistant_basics.egg-info/

@@ -1,7 +1,9 @@
-assistant_file: assistantproj_GwB7NQG39.zip
+assistant_file: assistantproj_GwB7NQG39_basics_suite.zip
 locale: en_AU
 logging: True
 default_location: Bega, au
+mqtt_hostname: localhost
+mqtt_port: 1883
 tts:
     service: snips
 skills:

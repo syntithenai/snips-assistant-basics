@@ -20,6 +20,7 @@ Clone the repository and from inside the top level folder run snipsskills instal
 	git clone https://github.com/syntithenai/snips-assistant-basics.git
 	cd snips-assistant-basics
 	snipsskills install
+	(optionally run tests)   make
 	snipsskills run
 
 
